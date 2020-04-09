@@ -1,0 +1,9 @@
+BackOfficeMiniProject.DataAcces.DataModels/bin/
+BackOfficeMiniProject.DataAcces.DataModels/obj/
+BackOfficeMiniProject.DataAccess.Database/bin/
+BackOfficeMiniProject.DataAccess.Database/obj/
+BackOfficeMiniProjectCross/bin/Debug/netcoreapp3.1/appsettings.Development.json
+BackOfficeMiniProjectCross/bin/
+BackOfficeMiniProjectCross/obj/BackOfficeMiniProjectCross.csproj.EntityFrameworkCore.targets
+BackOfficeMiniProjectCross/obj/BackOfficeMiniProjectCross.csproj.nuget.g.props
+BackOfficeMiniProjectCross/obj/
