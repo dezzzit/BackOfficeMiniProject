@@ -7,3 +7,6 @@ BackOfficeMiniProjectCross/bin/
 BackOfficeMiniProjectCross/obj/BackOfficeMiniProjectCross.csproj.EntityFrameworkCore.targets
 BackOfficeMiniProjectCross/obj/BackOfficeMiniProjectCross.csproj.nuget.g.props
 BackOfficeMiniProjectCross/obj/
+.vs/BackOfficeMiniProjectCross/DesignTimeBuild/.dtbcache.v2
+.vs/BackOfficeMiniProjectCross/v16/.suo
+obj/BackOfficeMiniProject.DataAccess.Database.csproj.EntityFrameworkCore.targets

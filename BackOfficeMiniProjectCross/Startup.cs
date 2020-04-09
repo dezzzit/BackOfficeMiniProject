@@ -36,9 +36,10 @@ namespace BackOfficeMiniProjectCross
 
             services.AddDbContextPool<BackOfficeDbContext>(options => options
                 // replace with your connection string
-                .UseMySql("Server=localhost;port=3306;Database=ef;User=root;Password=1234;", mySqlOptions => mySqlOptions
+                .UseMySql("Server=localhost;port=3307;Database=test3;User=root;Password=12345;", mySqlOptions => mySqlOptions
                     // replace with your Server Version and Type
-                    .ServerVersion(new Version(8, 0, 18), ServerType.MySql)
+                    //.ServerVersion(new Version(8, 0, 18), ServerType.MySql)
+                    .MigrationsAssembly("BackOfficeMiniProjectCross")
                 ));
 
         }

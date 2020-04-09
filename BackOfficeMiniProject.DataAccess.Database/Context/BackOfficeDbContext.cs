@@ -10,7 +10,6 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
         public BackOfficeDbContext(DbContextOptions<BackOfficeDbContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
