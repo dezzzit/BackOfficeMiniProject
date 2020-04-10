@@ -10,6 +10,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
         public BackOfficeDbContext(DbContextOptions<BackOfficeDbContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,7 +18,8 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
 
             modelBuilder.Entity<Brand>(entity =>
             {
-                entity.HasKey(e => e.Id);
+                entity.HasKey(e => e.Id)
+                    .HasAnnotation("MySQL:AutoIncrement", true);
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -25,12 +27,15 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.HasKey(e => e.Id);
+                entity.HasKey(e => e.Id)
+                    .HasAnnotation("MySQL:AutoIncrement", true); ;
                 entity.Property(e => e.TimeReceived).IsRequired();
                 entity.Property(e => e.Quantity).IsRequired();
                 entity.HasOne(d => d.Brand)
                     .WithMany(p => p.Orders);
             });
+
+            modelBuilder.Seed();
         }
     }
 }

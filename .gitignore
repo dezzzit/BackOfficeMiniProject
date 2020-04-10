@@ -10,3 +10,4 @@ BackOfficeMiniProjectCross/obj/
 .vs/BackOfficeMiniProjectCross/DesignTimeBuild/.dtbcache.v2
 .vs/BackOfficeMiniProjectCross/v16/.suo
 obj/BackOfficeMiniProject.DataAccess.Database.csproj.EntityFrameworkCore.targets
+MyStartupProject/

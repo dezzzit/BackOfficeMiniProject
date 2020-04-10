@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resourses\Brands.tsv">
+    <None Update="Resources\Brands.tsv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Resourses\Brand_Quantity_Time_Received.tsv">
+    <None Update="Resources\Brand_Quantity_Time_Received.tsv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

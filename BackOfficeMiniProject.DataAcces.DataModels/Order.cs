@@ -8,7 +8,7 @@ namespace BackOfficeMiniProject.DataAccess.DataModels
         /// <summary>
         ///     Gets or sets identifier.
         /// </summary>
-        public string Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         ///     Gets or sets time when order was received.
         /// </summary>
@@ -20,7 +20,7 @@ namespace BackOfficeMiniProject.DataAccess.DataModels
         /// <summary>
         ///     Gets or sets reference to brand  
         /// </summary>
-        //public int BrandId { get; set; }
+        public int BrandId { get; set; }
 
         public virtual Brand Brand { get; set; }
 
