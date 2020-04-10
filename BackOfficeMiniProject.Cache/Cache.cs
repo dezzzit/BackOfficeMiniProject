@@ -1,9 +1,9 @@
-﻿namespace Users.Cache
-{
-    using Microsoft.Extensions.Caching.Memory;
-    using System;
-    using Users.Cache.Interfaces;
+﻿using System;
+using BackOfficeMiniProject.Cache.Interfaces;
+using Microsoft.Extensions.Caching.Memory;
 
+namespace BackOfficeMiniProject.Cache
+{
     public class Cache<TData> : ICache<TData>
         where TData : class
     {

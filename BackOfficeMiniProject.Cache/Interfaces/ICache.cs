@@ -1,4 +1,4 @@
-﻿namespace Users.Cache.Interfaces
+﻿namespace BackOfficeMiniProject.Cache.Interfaces
 {
     public interface ICache<TData> 
         where TData : class

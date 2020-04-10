@@ -1,7 +1,7 @@
-﻿namespace Users.Cache.Interfaces
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace BackOfficeMiniProject.Cache.Interfaces
+{
     public interface ICacheList<TData> 
         where TData : class
     {

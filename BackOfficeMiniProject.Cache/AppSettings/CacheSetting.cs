@@ -1,4 +1,4 @@
-﻿namespace Users.Cache.AppSettings
+﻿namespace BackOfficeMiniProject.Cache.AppSettings
 {
     public class CacheSetting
     {

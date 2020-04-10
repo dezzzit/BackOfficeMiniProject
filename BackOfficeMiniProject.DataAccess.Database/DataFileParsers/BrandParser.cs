@@ -5,21 +5,21 @@ using BackOfficeMiniProject.DataAccess.DataModels;
 
 namespace BackOfficeMiniProject.DataAccess.Database.DataFileParsers
 {
-    public class BrandParser: Parser
+    public class BrandParser : Parser
     {
-        public BrandParser(string filePath) : base(filePath)
+        public BrandParser(string filePath, Dictionary<string, string> propertyToHeaderMap) : base(filePath, propertyToHeaderMap)
         {
         }
         public List<Brand> GetBrands()
         {
-            var delimitedByLine = GetDelimitedByLine();
+            var delimitedByLine = GetDelimitedDataByLine();
             var brandsList = delimitedByLine.Select(x =>
             {
                 string[] delimitedByTab = x.Split(new string[] { "\t" }, StringSplitOptions.RemoveEmptyEntries);
                 return new Brand()
                 {
-                    Id = Convert.ToInt32(delimitedByTab[0]),
-                    Name = delimitedByTab[1].Trim('"')
+                    Id = Convert.ToInt32(delimitedByTab[GetHeaderIndex(nameof(Brand.Id))]),
+                    Name = delimitedByTab[GetHeaderIndex(nameof(Brand.Name))].Trim('"')
                 };
             }).ToList();
             return brandsList;

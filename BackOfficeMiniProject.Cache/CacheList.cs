@@ -1,11 +1,11 @@
-﻿namespace Users.Cache
-{
-    using Microsoft.Extensions.Caching.Memory;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Users.Cache.Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using BackOfficeMiniProject.Cache.Interfaces;
+using Microsoft.Extensions.Caching.Memory;
 
+namespace BackOfficeMiniProject.Cache
+{
     public class CacheList<TData> : ICacheList<TData>
         where TData : class
     {

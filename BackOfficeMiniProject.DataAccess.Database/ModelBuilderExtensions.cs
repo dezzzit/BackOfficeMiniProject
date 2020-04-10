@@ -21,13 +21,15 @@ namespace BackOfficeMiniProject.DataAccess.Database
             string brandFilePath = resourceDirPath + brandFileName;
             string orderFilePath = resourceDirPath + orderFileName;
 
-            var brandParser = new BrandParser(brandFilePath);
+            var brandPropertyToHeaderMap = new Dictionary<string, string> { { nameof(Brand.Id), "BRAND_ID" }, { nameof(Brand.Name), "Name" }};
+            var brandParser = new BrandParser(brandFilePath,brandPropertyToHeaderMap);
             var brands = brandParser.GetBrands();
             modelBuilder.Entity<Brand>().HasData(
                 brands
             );
 
-            var orderParser = new OrderParser(orderFilePath);
+            var orderPropertyToHeaderMap = new Dictionary<string, string> { { nameof(Order.TimeReceived), "TIME_RECEIVED" }, { nameof(Order.Quantity), "QUANTITY" }, { nameof(Order.BrandId), "BRAND_ID" } };
+            var orderParser = new OrderParser(orderFilePath, orderPropertyToHeaderMap);
             var orders = orderParser.GetOrders();
 
             modelBuilder.Entity<Order>().HasData(
