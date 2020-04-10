@@ -11,3 +11,9 @@ BackOfficeMiniProjectCross/obj/
 .vs/BackOfficeMiniProjectCross/v16/.suo
 obj/BackOfficeMiniProject.DataAccess.Database.csproj.EntityFrameworkCore.targets
 MyStartupProject/
+BackOfficeMiniProject.Cache/bin/
+BackOfficeMiniProject.Cache/obj/
+BackOfficeMiniProject.DataAccess.Repository/bin/
+BackOfficeMiniProject.DataAccess.Repository/obj/
+BackOfficeMiniProject.Reports/obj/
+BackOfficeMiniProject.Reports/bin/

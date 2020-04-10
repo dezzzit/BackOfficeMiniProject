@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BackOfficeMiniProject.DataAcces.DataModels\BackOfficeMiniProject.DataAccess.DataModels.csproj" />
+    <ProjectReference Include="..\BackOfficeMiniProject.Reports\BackOfficeMiniProject.Reports.csproj" />
+  </ItemGroup>
+
+</Project>
