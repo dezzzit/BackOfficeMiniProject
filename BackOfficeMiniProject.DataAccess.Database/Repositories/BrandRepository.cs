@@ -1,7 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using BackOfficeMiniProject.DataAccess.Database.BaseRepositories;
-using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.DataModels;
 using BackOfficeMiniProject.DataAccess.Repository;
@@ -19,12 +17,15 @@ namespace BackOfficeMiniProject.DataAccess.Database.Repositories
         {
 
         }
+
         public IQueryable<Brand> Brands => Context.Brands;
+
         public Brand Get(int brandId)
         {
             return Context.Brands
                 .FirstOrDefault(brand => brand.Id == brandId);
         }
+
         public int Upsert(Brand brand)
         {
             if (Get(brand.Id) == null)
@@ -40,6 +41,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Repositories
 
             return Context.SaveChanges();
         }
+
         public int Delete(int brandId)
         {
             Context.Brands

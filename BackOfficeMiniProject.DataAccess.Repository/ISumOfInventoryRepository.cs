@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using BackOfficeMiniProject.DataAccess.DataModels;
+﻿using System.Linq;
 using BackOfficeMiniProject.Reports.Models;
 
 namespace BackOfficeMiniProject.DataAccess.Repository
@@ -15,7 +12,5 @@ namespace BackOfficeMiniProject.DataAccess.Repository
         ///     Gets all inventory sum.
         /// </summary>
         IQueryable<SumOfInventory> SumOfInventory { get; }
-
-        
     }
 }

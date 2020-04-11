@@ -1,8 +1,8 @@
-﻿namespace Users.DataAccess.Database.BaseRepositories
-{
-    using System;
-    using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 
+namespace Users.DataAccess.Database.BaseRepositories
+{
     /// <summary>
     ///     Base class for repository.
     /// </summary>

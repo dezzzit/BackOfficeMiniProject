@@ -5,7 +5,6 @@ using BackOfficeMiniProject.Cache.AppSettings;
 using BackOfficeMiniProject.DataAccess.DataModels;
 using BackOfficeMiniProject.DataAccess.Repository;
 using BackOfficeMiniProjectCross.CommonNames;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
