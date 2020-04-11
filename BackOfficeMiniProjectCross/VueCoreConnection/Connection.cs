@@ -15,7 +15,7 @@ namespace BackOfficeMiniProjectCross.VueCoreConnection
     public static class Connection
     {
        
-        private static int Port { get; } = 8091;
+        private static int Port { get; } = 8081;
         private static Uri DevelopmentServerEndpoint { get; } = new Uri($"http://localhost:{Port}");
         private static TimeSpan Timeout { get; } = TimeSpan.FromSeconds(60);
        

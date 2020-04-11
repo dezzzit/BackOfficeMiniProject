@@ -88,8 +88,7 @@ namespace BackOfficeMiniProjectCross.Controllers
             return await Task.Run(
                 () =>
                 {
-                    if ((brand == null) ||
-                        (brand.Id < 1))
+                    if (brand == null)
                     {
                         return BadRequest();
                     }

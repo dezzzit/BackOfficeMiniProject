@@ -27,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="clientapp\src\models\Forecast - Copy.js">
+      <DependentUpon>Forecast - Copy.ts</DependentUpon>
+    </None>
+    <None Update="clientapp\src\models\Forecast - Copy.js.map">
+      <DependentUpon>Forecast - Copy.js</DependentUpon>
+    </None>
     <None Update="Resources\Brands.tsv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

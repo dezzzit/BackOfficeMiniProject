@@ -26,6 +26,18 @@ namespace BackOfficeMiniProjectCross
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //add CORS
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("VueCorsPolicy", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod(); 
+                });
+            });
+
             services.AddControllers();
             services.AddSpaStaticFiles(configuration =>
             {
@@ -34,7 +46,7 @@ namespace BackOfficeMiniProjectCross
             
             services.AddDbContextPool<BackOfficeDbContext>(options => options
                 // replace with your connection string
-                .UseMySql("Server=localhost;port=3307;Database=test8;User=root;Password=12345;", mySqlOptions => mySqlOptions
+                .UseMySql("Server=localhost;port=3307;Database=test9;User=root;Password=12345;", mySqlOptions => mySqlOptions
                     // replace with your Server Version and Type
                     .MigrationsAssembly("BackOfficeMiniProjectCross")
                     
@@ -45,6 +57,8 @@ namespace BackOfficeMiniProjectCross
             services
                 .Configure<CacheSetting>(
                     Configuration.GetSection(nameof(CacheSetting)));
+
+
 
             //Add memory caching
             services.AddMemoryCache();
@@ -85,6 +99,7 @@ namespace BackOfficeMiniProjectCross
                 endpoints.MapControllers();
             });
 
+            
 
             //use middleware and launch server for Vue
 
@@ -115,6 +130,7 @@ namespace BackOfficeMiniProjectCross
                 );
             });
 
+            app.UseCors("VueCorsPolicy");
         }
     }
 }
