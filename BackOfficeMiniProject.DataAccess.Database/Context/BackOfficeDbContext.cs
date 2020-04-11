@@ -11,7 +11,9 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
         public BackOfficeDbContext(DbContextOptions<BackOfficeDbContext> options)
             : base(options)
         {
+
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
