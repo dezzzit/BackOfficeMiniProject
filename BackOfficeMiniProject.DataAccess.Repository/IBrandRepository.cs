@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BackOfficeMiniProject.DataAccess.DataModels;
 
 namespace BackOfficeMiniProject.DataAccess.Repository
@@ -11,7 +12,7 @@ namespace BackOfficeMiniProject.DataAccess.Repository
         /// <summary>
         ///     Gets all brands.
         /// </summary>
-        IQueryable<Brand> Brands { get; }
+        IEnumerable<Brand> Brands { get; }
 
         /// <summary>
         ///     Gets brand by identifier.

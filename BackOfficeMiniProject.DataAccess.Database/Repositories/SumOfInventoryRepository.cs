@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BackOfficeMiniProject.DataAccess.Database.BaseRepositories;
 using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.Repository;
@@ -19,7 +20,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Repositories
         }
 
         /// <inheritdoc />
-        public IQueryable<SumOfInventory> SumOfInventory => Context.Orders
+        public IEnumerable<SumOfInventory> SumOfInventory => Context.Orders
             .Join(Context.Brands, o => o.BrandId, b => b.Id, (o, b) => new { o, b })
             .GroupBy(x => x.b.Name)
             .Select(g => new SumOfInventory(g.Sum(item => item.o.Quantity), g.Key));

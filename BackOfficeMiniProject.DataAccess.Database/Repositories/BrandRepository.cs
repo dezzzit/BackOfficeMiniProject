@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BackOfficeMiniProject.DataAccess.Database.BaseRepositories;
 using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.DataModels;
@@ -18,7 +19,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Repositories
 
         }
 
-        public IQueryable<Brand> Brands => Context.Brands;
+        public IEnumerable<Brand> Brands => Context.Brands;
 
         public Brand Get(int brandId)
         {

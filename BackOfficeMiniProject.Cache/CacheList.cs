@@ -10,13 +10,13 @@ namespace BackOfficeMiniProject.Cache
         where TData : class
     {
         private readonly IMemoryCache _memoryCache;
-        private readonly IQueryable<TData> _dataList;
+        private readonly IEnumerable<TData> _dataList;
         private readonly string _key;
         private readonly int _expireMinutes;
 
         public CacheList(
             IMemoryCache memoryCache,
-            IQueryable<TData> dataList,
+            IEnumerable<TData> dataList,
             string key = nameof(ICacheList<TData>),
             int expireMinutes = 10)
         {
