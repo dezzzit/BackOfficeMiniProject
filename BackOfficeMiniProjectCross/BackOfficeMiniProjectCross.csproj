@@ -18,12 +18,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BackOfficeMiniProject.Cache\BackOfficeMiniProject.Cache.csproj" />
     <ProjectReference Include="..\BackOfficeMiniProject.DataAccess.Database\BackOfficeMiniProject.DataAccess.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="obj\" />
+    <None Update="Resources\Brands.tsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Brand_Quantity_Time_Received.tsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 

@@ -17,19 +17,6 @@
     <ProjectReference Include="..\BackOfficeMiniProject.DataAccess.Repository\BackOfficeMiniProject.DataAccess.Repository.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Resources\Brands.tsv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Brand_Quantity_Time_Received.tsv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-	<PropertyGroup>
-		<OutputPath>C:\Users\Dezzz\source\repos\BackOfficeMiniProject\BackOfficeMiniProjectCross\bin\$(Configuration)\</OutputPath>
-	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	  <DocumentationFile>..\MyStartupProject\bin\Debug\BackOfficeMiniProject.DataAccess.Database.xml</DocumentationFile>
 	</PropertyGroup>
