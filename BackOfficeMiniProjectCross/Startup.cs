@@ -53,11 +53,14 @@ namespace BackOfficeMiniProjectCross
             services
                 .Configure<CacheSetting>(
                     Configuration.GetSection(nameof(CacheSetting)));
-                
-            //Configure IoC
-            services.AddScoped<IBrandRepository, BrandRepository>();
+
+            //Add memory caching
             services.AddMemoryCache();
 
+            //Configure IoC
+            services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<ISumOfInventoryRepository, SumOfInventoryRepository>();
+            
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {

@@ -5,7 +5,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
     public class BackOfficeDbContext : DbContext
     {
         public DbSet<Brand> Brands { get; set; }
-        public DbSet<Brand> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         public BackOfficeDbContext(DbContextOptions<BackOfficeDbContext> options)
             : base(options)

@@ -18,10 +18,8 @@ namespace BackOfficeMiniProjectCross.Controllers
     public class BrandsController : ControllerBase
     {
         private readonly IBrandRepository _brandRepository;
-        private readonly CacheSetting _сacheSetting;
-        private readonly IMemoryCache _memoryCache;
 
-        private CacheList<Brand> _brandCacheList;
+        private readonly CacheList<Brand> _brandCacheList;
 
         public BrandsController(
             IBrandRepository brandRepository,
@@ -29,14 +27,12 @@ namespace BackOfficeMiniProjectCross.Controllers
             IMemoryCache memoryCache)
         {
             _brandRepository = brandRepository;
-            _сacheSetting = cacheSetting.Value;
-            _memoryCache = memoryCache;
 
             _brandCacheList = new CacheList<Brand>(
-                _memoryCache,
+                memoryCache,
                 _brandRepository.Brands,
                 CacheKeys.Brands.BrandsKey,
-                _сacheSetting.ExpireMinutes);
+                cacheSetting.Value.ExpireMinutes);
         }
 
         // GET api/Brands
@@ -62,6 +58,7 @@ namespace BackOfficeMiniProjectCross.Controllers
 
         // GET: api/Brands/[BrandId]
         [HttpGet("{BrandId}", Name = "GetBrand")]
+        [FormatFilter] // api/[controller]?format=xml
         public async Task<IActionResult> GetBrand(int brandId)
         {
             return await Task.Run(
