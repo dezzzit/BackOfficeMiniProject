@@ -7,6 +7,7 @@ using BackOfficeMiniProject.Cache.AppSettings;
 using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.Database.Repositories;
 using BackOfficeMiniProject.DataAccess.Repository;
+using BackOfficeMiniProjectCross.VueCoreConnection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +40,7 @@ namespace BackOfficeMiniProjectCross
             {
                 configuration.RootPath = "ClientApp";
             });
-
+            
             services.AddDbContextPool<BackOfficeDbContext>(options => options
                 // replace with your connection string
                 .UseMySql("Server=localhost;port=3307;Database=test8;User=root;Password=12345;", mySqlOptions => mySqlOptions
@@ -93,19 +94,19 @@ namespace BackOfficeMiniProjectCross
                 endpoints.MapControllers();
             });
 
-            //app.UseSpa(spa =>
-            //{
-            //    if (env.IsDevelopment())
-            //        spa.Options.SourcePath = "ClientApp";
-            //    else
-            //        spa.Options.SourcePath = "dist";
 
-            //    if (env.IsDevelopment())
-            //    {
-            //        spa.UseVueCli(npmScript: "serve",4000);
-            //    }
+            //use middleware and launch server for Vue
 
-            //});
+            app.UseSpaStaticFiles();
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "clientapp";
+                if (env.IsDevelopment())
+                {
+
+                    spa.UseVueDevelopmentServer();
+                }
+            });
 
             // Init Database
             using var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope();

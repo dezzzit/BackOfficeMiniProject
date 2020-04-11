@@ -17,3 +17,4 @@ BackOfficeMiniProject.DataAccess.Repository/bin/
 BackOfficeMiniProject.DataAccess.Repository/obj/
 BackOfficeMiniProject.Reports/obj/
 BackOfficeMiniProject.Reports/bin/
+node_modules/
