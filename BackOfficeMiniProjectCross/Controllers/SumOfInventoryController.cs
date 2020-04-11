@@ -1,15 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using BackOfficeMiniProject.Cache;
-using BackOfficeMiniProject.Cache.AppSettings;
-using BackOfficeMiniProject.DataAccess.DataModels;
 using BackOfficeMiniProject.DataAccess.Repository;
 using BackOfficeMiniProject.Reports.Models;
-using BackOfficeMiniProjectCross.CommonNames;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Options;
 
 namespace BackOfficeMiniProjectCross.Controllers
 {

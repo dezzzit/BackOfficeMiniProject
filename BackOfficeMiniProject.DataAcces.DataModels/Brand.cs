@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace BackOfficeMiniProject.DataAccess.DataModels
 {
@@ -9,11 +8,12 @@ namespace BackOfficeMiniProject.DataAccess.DataModels
         ///     Gets or sets identifier.
         /// </summary>
         public int Id { get; set; }
+
         /// <summary>
         ///     Gets or sets brand name.
         /// </summary>
         public string Name { get; set; }
-        public virtual List<Order> Orders { get; set; }
 
+        public virtual List<Order> Orders { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BackOfficeMiniProject.DataAccess.DataModels;
 using Microsoft.EntityFrameworkCore;
+
 namespace BackOfficeMiniProject.DataAccess.Database.Context
 {
     public class BackOfficeDbContext : DbContext

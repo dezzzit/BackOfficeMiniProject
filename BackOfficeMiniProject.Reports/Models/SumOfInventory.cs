@@ -12,6 +12,7 @@
         ///     Gets or sets sum .
         /// </summary>
         public int Quantity { get; }
+
         /// <summary>
         ///     Gets or sets time when order was received.
         /// </summary>
