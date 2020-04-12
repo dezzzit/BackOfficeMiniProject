@@ -30,7 +30,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.HasKey(e => e.Id)
-                    .HasAnnotation("MySQL:AutoIncrement", true); ;
+                    .HasAnnotation("MySQL:AutoIncrement", true);
                 entity.Property(e => e.TimeReceived).IsRequired();
                 entity.Property(e => e.Quantity).IsRequired();
                 entity.HasOne(d => d.Brand)
