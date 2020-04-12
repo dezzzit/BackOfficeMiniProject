@@ -24,13 +24,12 @@
 </template>
 
 <script lang="ts">
-// an example of a Vue Typescript component using vue-property-decorator
 import { Component, Vue } from "vue-property-decorator";
 import { SumOfInventory } from "../models/SumOfInventory";
 import axios from "axios";
 
 @Component({})
-export default class FetchDataView extends Vue {
+export default class InventoryDisplayView extends Vue {
   private loading: boolean = true;
   private showError: boolean = false;
   private errorMessage: string = "Error while loading inventory:.";

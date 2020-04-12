@@ -52,7 +52,6 @@ export default class App extends Vue {
   private title: string = 'Back Office Mini Project';
   private items = [
     { title: 'New brand', icon: 'create', link: '/' },
-    { title: 'Counter', icon: 'touch_app', link: '/counter' },
     { title: 'Inventory display', icon: 'chrome_reader_mode', link: '/fetch-data' },
   ];
 }
