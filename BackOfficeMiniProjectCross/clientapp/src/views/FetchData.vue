@@ -26,7 +26,7 @@
 <script lang="ts">
 // an example of a Vue Typescript component using vue-property-decorator
 import { Component, Vue } from "vue-property-decorator";
-import { Forecast } from "../models/Forecast";
+import { SumOfInventory } from "../models/SumOfInventory";
 import axios from "axios";
 
 @Component({})
@@ -34,9 +34,9 @@ export default class FetchDataView extends Vue {
   private loading: boolean = true;
   private showError: boolean = false;
   private errorMessage: string = "Error while loading inventory:.";
-  private forecasts: Forecast[] = [];
+  private forecasts: SumOfInventory[] = [];
   private headers = [
-    { text: "Name", value: "name" },
+    { text: "Name", value: "brandName" },
     { text: "Count", value: "quantity" }
   ];
 
@@ -51,7 +51,7 @@ export default class FetchDataView extends Vue {
   }
   private async fetchSumOfInventory() {
     try {
-      const response = await axios.get<Forecast[]>("/api/SumOfInventory");
+      const response = await axios.get<SumOfInventory[]>("/api/SumOfInventory");
       this.forecasts = response.data;
     } catch (e) {
       this.showError = true;

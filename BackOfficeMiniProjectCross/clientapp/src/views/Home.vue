@@ -2,13 +2,9 @@
   <v-container fluid>
     <div id="app">
       <v-app id="inspire">
+        <h1>Add brand</h1>
         <v-form ref="form" v-model="valid" lazy-validation>
-          <v-alert
-              :value="showSuccess"
-              type="success"
-            >
-              New brand was added
-            </v-alert>
+          <v-alert :value="showSuccess" type="success">New brand was added</v-alert>
           <v-text-field v-model="name" :counter="15" :rules="nameRules" label="Name" required></v-text-field>
 
           <v-btn :disabled="!valid" color="success" class="mr-4" @click="create">Create</v-btn>
@@ -61,7 +57,7 @@ export default Vue.extend({
     },
     reset() {
       (this.$refs.form as any).reset();
-       this.showSuccess = false;
+      this.showSuccess = false;
     }
   }
 });
