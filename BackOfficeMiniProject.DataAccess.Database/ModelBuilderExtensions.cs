@@ -15,7 +15,7 @@ namespace BackOfficeMiniProject.DataAccess.Database
 
         public static void Seed(this ModelBuilder modelBuilder)
         {
-            string resourceDirPath = Path.Combine(Directory.GetCurrentDirectory(), Resources);
+            string resourceDirPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Substring(6), Resources);
 
             string brandFilePath = Path.Combine(resourceDirPath, _brandFileName);
             string orderFilePath = Path.Combine(resourceDirPath, _orderFileName);

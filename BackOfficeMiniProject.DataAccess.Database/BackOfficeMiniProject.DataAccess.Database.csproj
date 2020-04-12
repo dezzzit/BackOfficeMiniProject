@@ -17,6 +17,15 @@
     <ProjectReference Include="..\BackOfficeMiniProject.DataAccess.Repository\BackOfficeMiniProject.DataAccess.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\Brands.tsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Brand_Quantity_Time_Received.tsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	  <DocumentationFile>..\MyStartupProject\bin\Debug\BackOfficeMiniProject.DataAccess.Database.xml</DocumentationFile>
 	</PropertyGroup>
