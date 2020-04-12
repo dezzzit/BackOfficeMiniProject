@@ -25,7 +25,7 @@
     <ProjectReference Include="..\BackOfficeMiniProject.Cache\BackOfficeMiniProject.Cache.csproj" />
     <ProjectReference Include="..\BackOfficeMiniProject.DataAccess.Database\BackOfficeMiniProject.DataAccess.Database.csproj" />
   </ItemGroup>
-
+ 
   <ItemGroup>
     <None Update="clientapp\src\models\Forecast - Copy.js">
       <DependentUpon>Forecast - Copy.ts</DependentUpon>
@@ -33,13 +33,7 @@
     <None Update="clientapp\src\models\Forecast - Copy.js.map">
       <DependentUpon>Forecast - Copy.js</DependentUpon>
     </None>
-    <None Update="Resources\Brands.tsv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Brand_Quantity_Time_Received.tsv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
-
+  
 </Project>
