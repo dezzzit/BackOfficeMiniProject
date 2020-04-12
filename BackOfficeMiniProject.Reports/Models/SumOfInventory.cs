@@ -9,12 +9,12 @@
         }
 
         /// <summary>
-        ///     Gets or sets sum .
+        ///     Gets sum.
         /// </summary>
         public int Quantity { get; }
 
         /// <summary>
-        ///     Gets or sets time when order was received.
+        ///     Gets or brand name.
         /// </summary>
         public string BrandName { get; }
     }

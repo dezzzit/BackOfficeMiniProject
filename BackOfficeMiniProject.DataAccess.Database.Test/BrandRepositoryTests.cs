@@ -1,6 +1,7 @@
 using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.Database.Repositories;
 using BackOfficeMiniProject.DataAccess.DataModels;
+using BackOfficeMiniProject.DataAccess.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using Xunit;
@@ -9,11 +10,11 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
 {
     public class BrandRepositoryTests : IDisposable
     {
-        private readonly BrandRepository _brandRepository;
+        private readonly IBrandRepository _brandRepository;
 
         protected DbContextOptions<BackOfficeDbContext> dbContextOptions { get; }
         protected BackOfficeDbContext context;
-        protected string connectionString = "Server=localhost;port=3306;Database=test10;User=root;Password=12345;";
+        protected string connectionString = "Server=localhost;port=3306;Database=Test_BrandRepository;User=root;Password=12345;";
 
         public BrandRepositoryTests()
         {
