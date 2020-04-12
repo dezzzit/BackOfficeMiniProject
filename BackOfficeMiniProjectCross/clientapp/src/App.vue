@@ -31,7 +31,7 @@
     </v-content>
 
     <v-footer app>
-      <span>&nbsp;Software Ateliers&nbsp;&copy;&nbsp;2020</span>
+      <span>&nbsp;Artem Khaustov&nbsp;&copy;&nbsp;2020</span>
     </v-footer>
 
   </v-app>
@@ -49,11 +49,11 @@ export default class App extends Vue {
   private drawer: boolean = true;
   private miniVariant: boolean = false;
   private right: boolean = true;
-  private title: string = 'ASP.NET Core Vue Starter';
+  private title: string = 'Back Office Mini Project';
   private items = [
-    { title: 'Home', icon: 'home', link: '/' },
+    { title: 'New brand', icon: 'create', link: '/' },
     { title: 'Counter', icon: 'touch_app', link: '/counter' },
-    { title: 'Fetch data', icon: 'get_app', link: '/fetch-data' },
+    { title: 'Inventory display', icon: 'chrome_reader_mode', link: '/fetch-data' },
   ];
 }
 </script>

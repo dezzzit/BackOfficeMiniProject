@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import CreateBrandForm from './views/CreateBrandForm.vue';
 
 Vue.use(Router);
 
@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'createBrandForm',
+      component: CreateBrandForm,
     },
     {
       path: '/counter',
@@ -24,7 +24,7 @@ export default new Router({
     {
       path: '/fetch-data',
       name: 'fetch-data',
-      component: () => import(/* webpackChunkName: "fetch-data" */ './views/FetchData.vue'),
+      component: () => import(/* webpackChunkName: "fetch-data" */ './views/InventotyDisplay.vue'),
     },
   ],
 });

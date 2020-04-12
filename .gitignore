@@ -19,3 +19,6 @@ BackOfficeMiniProject.Reports/obj/
 BackOfficeMiniProject.Reports/bin/
 node_modules/
 BackOfficeMiniProjectCross/clientapp/node_modules.zip
+BackOfficeMiniProject.DataAccess.Database.Test/bin/
+BackOfficeMiniProject.DataAccess.Database.Test/obj/Debug/netcoreapp3.1/BackOfficeMiniProject.DataAccess.Database.Test.csproj.CoreCompileInputs.cache
+BackOfficeMiniProject.DataAccess.Database.Test/obj/
