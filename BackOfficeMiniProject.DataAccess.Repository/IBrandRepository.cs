@@ -5,7 +5,7 @@ using BackOfficeMiniProject.DataAccess.DataModels;
 namespace BackOfficeMiniProject.DataAccess.Repository
 {
     /// <summary>
-    ///     Brand repository.
+    ///  Brand repository interface describes CRUD operations for brand
     /// </summary>
     public interface IBrandRepository
     {
@@ -15,24 +15,24 @@ namespace BackOfficeMiniProject.DataAccess.Repository
         IEnumerable<Brand> Brands { get; }
 
         /// <summary>
-        ///     Gets brand by identifier.
+        /// Provide brand by id 
         /// </summary>
-        /// <param name="brandId">Brand identifier.</param>
-        /// <returns></returns>
+        /// <param name="brandId"></param>
+        /// <returns>Brand's entity</returns>
         Brand Get(int brandId);
 
         /// <summary>
-        ///     Adds or update brand.
+        /// Update or insert new brand, depend on id existing
         /// </summary>
-        /// <param name="brand">The brand.</param>
-        /// <returns>The number of state entries written to the database.</returns>
+        /// <param name="brand">Brand item</param>
+        /// <returns>New or updated id</returns>
         int Upsert(Brand brand);
 
         /// <summary>
-        ///     Deletes brand by brand identifier.
+        /// Deletes brand item by id
         /// </summary>
-        /// <param name="brandId">The brand identifier.</param>
-        /// <returns>The number of state entries written to the database.</returns>
+        /// <param name="brandId">brand's id</param>
+        /// <returns>deleted items count</returns>
         int Delete(int brandId);
     }
 }

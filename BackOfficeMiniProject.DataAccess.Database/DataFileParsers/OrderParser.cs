@@ -6,13 +6,25 @@ using BackOfficeMiniProject.DataAccess.DataModels;
 
 namespace BackOfficeMiniProject.DataAccess.Database.DataFileParsers
 {
+    /// <summary>
+    /// Contains logic for reading orders TSV files
+    /// </summary>
     public class OrderParser : Parser
     {
+        /// <summary>
+        /// Initialize orders parser
+        /// </summary>
+        /// <param name="filePath">Full path to orders file</param>
+        /// <param name="propertyToHeaderMap">Map file headers to property, key - property, value - header</param>
         public OrderParser(string filePath, Dictionary<string, string> propertyToHeaderMap ) : base(filePath,propertyToHeaderMap)
         {
            
         }
-        
+
+        /// <summary>
+        /// Returns orders list of items 
+        /// </summary>
+        /// <returns>Orders list</returns>
         public List<Order> GetOrders()
         {
             var delimitedByLine = GetDelimitedDataByLine();

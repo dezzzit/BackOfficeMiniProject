@@ -12,15 +12,20 @@ using Microsoft.Extensions.Logging;
 
 namespace BackOfficeMiniProjectCross.VueCoreConnection
 {
+    /// <summary>
+    /// Provide connection setting for vue client app 
+    /// </summary>
     public static class Connection
     {
-       
         private static int Port { get; } = 8081;
         private static Uri DevelopmentServerEndpoint { get; } = new Uri($"http://localhost:{Port}");
         private static TimeSpan Timeout { get; } = TimeSpan.FromSeconds(60);
-       
         private static string DoneMessage { get; } = "DONE  Compiled successfully in";
 
+        /// <summary>
+        /// Run spa logic 
+        /// </summary>
+        /// <param name="spa">Application builder</param>
         public static void UseVueDevelopmentServer(this ISpaBuilder spa)
         {
             spa.UseProxyToSpaDevelopmentServer(async () =>

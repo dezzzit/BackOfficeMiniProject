@@ -10,7 +10,7 @@ namespace BackOfficeMiniProject.DataAccess.Repository
     public interface ISumOfInventoryRepository
     {
         /// <summary>
-        ///     Gets all inventory sum.
+        /// Gets all inventory sum.
         /// </summary>
         IEnumerable<SumOfInventory> SumOfInventory { get; }
     }

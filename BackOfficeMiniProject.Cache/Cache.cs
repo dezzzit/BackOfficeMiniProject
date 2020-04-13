@@ -4,6 +4,10 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace BackOfficeMiniProject.Cache
 {
+    /// <summary>
+    /// Provides caching logic for entities
+    /// </summary>
+    /// <typeparam name="TData">Entity</typeparam>
     public class Cache<TData> : ICache<TData>
         where TData : class
     {
@@ -12,6 +16,9 @@ namespace BackOfficeMiniProject.Cache
         private readonly string _key;
         private readonly int _expireMinutes;
 
+        /// <summary>
+        /// Initialize cache
+        /// </summary>
         public Cache(
             IMemoryCache memoryCache,
             TData data,
@@ -24,6 +31,7 @@ namespace BackOfficeMiniProject.Cache
             _expireMinutes = expireMinutes;
         }
 
+        /// <inheritdoc />
         public TData GetValue()
         {
             if (!_memoryCache.TryGetValue(_key, out TData value))
@@ -38,6 +46,7 @@ namespace BackOfficeMiniProject.Cache
             return value;
         }
 
+        /// <inheritdoc />
         public void Set(TData value)
         {
             _memoryCache.Set(_key, value, new MemoryCacheEntryOptions
@@ -46,6 +55,7 @@ namespace BackOfficeMiniProject.Cache
             });
         }
 
+        /// <inheritdoc />
         public void Remove()
         {
             if (_memoryCache.TryGetValue(_key, out TData value))

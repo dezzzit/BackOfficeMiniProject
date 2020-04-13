@@ -7,6 +7,9 @@ using BackOfficeMiniProject.Reports.Models;
 
 namespace BackOfficeMiniProject.DataAccess.Database.Repositories
 {
+    /// <summary>
+    /// Contains logic of CRUD operations for the brand entity
+    /// </summary>
     public class SumOfInventoryRepository : ContextEntityRepository, ISumOfInventoryRepository
     {
         /// <summary>
