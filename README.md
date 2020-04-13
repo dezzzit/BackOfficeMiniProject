@@ -48,7 +48,7 @@ npm run lint
 
 
 # Tests
-Unit Test project presented in solution and using separate connection strings inside project 
+Unit Test project presented in solution and using separate connection string *\BackOfficeMiniProject\BackOfficeMiniProject.DataAccess.Database.Test\appsettings.json*
 
 # Swager
 For running Swagger you need to exclude  run spa from *BackOfficeMiniProject\BackOfficeMiniProjectCross\Startup.cs* through
