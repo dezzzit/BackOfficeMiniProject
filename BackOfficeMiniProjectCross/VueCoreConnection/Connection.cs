@@ -23,7 +23,7 @@ namespace BackOfficeMiniProjectCross.VueCoreConnection
         private static string DoneMessage { get; } = "DONE  Compiled successfully in";
 
         /// <summary>
-        /// Run spa logic 
+        /// Logic of running Spa
         /// </summary>
         /// <param name="spa">Application builder</param>
         public static void UseVueDevelopmentServer(this ISpaBuilder spa)
