@@ -8,7 +8,6 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
     /// </summary>
     public class BackOfficeDbContext : DbContext
     {
-        private static object _lc = new object();
         /// <summary>
         /// Provides brands returned from database
         /// </summary>
@@ -33,8 +32,6 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            lock (_lc)
-            {
                 base.OnModelCreating(modelBuilder);
 
                 modelBuilder.Entity<Brand>(entity =>
@@ -57,7 +54,6 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
                 });
 
                 modelBuilder.Seed();
-            }
         }
     }
 }

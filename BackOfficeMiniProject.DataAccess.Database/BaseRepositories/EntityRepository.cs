@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace Users.DataAccess.Database.BaseRepositories
+namespace BackOfficeMiniProject.DataAccess.Database.BaseRepositories
 {
     /// <summary>
     ///     Base class for repository.
