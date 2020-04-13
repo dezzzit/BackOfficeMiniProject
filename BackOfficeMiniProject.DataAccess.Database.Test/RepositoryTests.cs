@@ -93,7 +93,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
         }
 
         [Fact]
-        public void Test_SumOfInventory()
+        public void Test_SumOfInventoryRepository_SumOfInventory()
         {
             int expectedBrandCount = Context.Brands
                 .Count();
