@@ -21,12 +21,11 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
 
         protected DbContextOptions<BackOfficeDbContext> dbContextOptions { get; }
         protected BackOfficeDbContext context;
-        protected string connectionString = "Server=localhost;port=3307;Database=Test_SumOfInventory;User=root;Password=12345;";
 
         public SumOfInventoryRepositoryTest()
         {
             dbContextOptions = new DbContextOptionsBuilder<BackOfficeDbContext>()
-                .UseMySql(connectionString)
+                .UseMySql(Settings.ConnectionString.SumOfInventory)
                 .Options;
 
             context = new BackOfficeDbContext(dbContextOptions);
