@@ -11,6 +11,9 @@ using Xunit;
 
 namespace BackOfficeMiniProject.DataAccess.Database.Test
 {
+    /// <summary>
+    /// Contains tests for SumOfInventoryRepository
+    /// </summary>
     public class SumOfInventoryRepositoryTest : IDisposable
     {
         private readonly IBrandRepository _brandRepository;

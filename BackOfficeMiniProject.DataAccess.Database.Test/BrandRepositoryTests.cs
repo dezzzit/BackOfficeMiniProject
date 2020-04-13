@@ -8,6 +8,9 @@ using Xunit;
 
 namespace BackOfficeMiniProject.DataAccess.Database.Test
 {
+    /// <summary>
+    /// Contains tests for BrandRepository
+    /// </summary>
     public class BrandRepositoryTests : IDisposable
     {
         private readonly IBrandRepository _brandRepository;
