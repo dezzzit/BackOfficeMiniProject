@@ -1,4 +1,4 @@
-﻿using BackOfficeMiniProject.DataAccess.Database.Context;
+using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.Database.Repositories;
 using BackOfficeMiniProject.DataAccess.DataModels;
 using BackOfficeMiniProject.DataAccess.Repository;
@@ -12,9 +12,9 @@ using Xunit;
 namespace BackOfficeMiniProject.DataAccess.Database.Test
 {
     /// <summary>
-    /// Contains tests for SumOfInventoryRepository
+    /// Contains tests for BrandRepository and SumOfInventoryRepository
     /// </summary>
-    public class SumOfInventoryRepositoryTest : IDisposable
+    public class RepositoryTests : IDisposable
     {
         private readonly IBrandRepository _brandRepository;
         private readonly ISumOfInventoryRepository _sumOfInventoryRepository;
@@ -22,10 +22,10 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
         protected DbContextOptions<BackOfficeDbContext> DbContextOptions { get; }
         protected BackOfficeDbContext Context;
 
-        public SumOfInventoryRepositoryTest()
+        public RepositoryTests()
         {
             DbContextOptions = new DbContextOptionsBuilder<BackOfficeDbContext>()
-                .UseMySql(Settings.ConnectionString.BrandRepository)
+                .UseMySql(Settings.ConnectionString.TestProjectConnectionString)
                 .Options;
 
             Context = new BackOfficeDbContext(DbContextOptions);
@@ -35,10 +35,61 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
             _brandRepository = new BrandRepository(Context);
             _sumOfInventoryRepository = new SumOfInventoryRepository(Context);
         }
-        
+
         public void Dispose()
         {
             Context.Database.EnsureDeleted();
+        }
+
+        [Fact]
+        public void Test_BrandRepository_Upsert_Create()
+        {
+            var expectedBrand = new Brand()
+            {
+                Id = 15,
+                Name = "NewBrand"
+            };
+
+            _brandRepository.Upsert(expectedBrand);
+
+            Brand actualBrand = _brandRepository.Get(expectedBrand.Id);
+
+            Assert.NotNull(actualBrand);
+            Assert.Equal(expectedBrand.Id, actualBrand.Id);
+            Assert.Equal(expectedBrand.Name, actualBrand.Name);
+        }
+
+        [Fact]
+        public void Test_BrandRepository_Upsert_Update()
+        {
+            int expectedBrandId = 1;
+
+            Brand expectedBrand = _brandRepository.Get(expectedBrandId);
+            Assert.NotNull(expectedBrand);
+
+            expectedBrand.Name = "UpdatedBrand";
+
+            _brandRepository.Upsert(expectedBrand);
+
+            Brand actualBrand = _brandRepository.Get(expectedBrand.Id);
+            
+            Assert.NotNull(actualBrand);
+            Assert.Equal(expectedBrand.Id, actualBrand.Id);
+            Assert.Equal(expectedBrand.Name, actualBrand.Name);
+        }
+
+        [Fact]
+        public void Test_BrandRepository_Delete()
+        {
+            int expectedBrandId = 1;
+
+            Brand expectedBrand = _brandRepository.Get(expectedBrandId);
+            Assert.NotNull(expectedBrand);
+
+            _brandRepository.Delete(expectedBrandId);
+
+            Brand actualBrand = _brandRepository.Get(expectedBrandId);
+            Assert.Null(actualBrand);
         }
 
         [Fact]
