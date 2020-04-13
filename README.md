@@ -48,4 +48,20 @@ npm run lint
 
 
 # Tests
-Test project using separate connection strings inside project 
+Unit Test project presented in solution and using separate connection strings inside project 
+
+# Swager
+For running Swagger you need to exclude  run spa from *BackOfficeMiniProject\BackOfficeMiniProjectCross\Startup.cs* through
+```
+            app.UseSpaStaticFiles();
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "clientapp";
+                if (env.IsDevelopment())
+                {
+
+                    spa.UseVueDevelopmentServer();
+                }
+            });
+```
+ 
