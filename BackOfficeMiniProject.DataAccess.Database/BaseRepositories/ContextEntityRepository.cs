@@ -1,6 +1,5 @@
 ﻿using System;
 using BackOfficeMiniProject.DataAccess.Database.Context;
-using Users.DataAccess.Database.BaseRepositories;
 
 namespace BackOfficeMiniProject.DataAccess.Database.BaseRepositories
 {
