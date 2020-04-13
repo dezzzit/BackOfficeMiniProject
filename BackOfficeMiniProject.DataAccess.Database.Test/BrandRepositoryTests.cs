@@ -14,7 +14,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
 
         protected DbContextOptions<BackOfficeDbContext> dbContextOptions { get; }
         protected BackOfficeDbContext context;
-        protected string connectionString = "Server=localhost;port=3306;Database=Test_BrandRepository;User=root;Password=12345;";
+        protected string connectionString = "Server=localhost;port=3307;Database=Test_BrandRepository;User=root;Password=12345;";
 
         public BrandRepositoryTests()
         {

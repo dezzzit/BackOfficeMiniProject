@@ -24,4 +24,7 @@ npm run build
 npm run lint
 ```
 # Database setup
-Database creates automaticaly using connection string
+Database creates automaticaly using connection string in *appsettings.json* 
+
+# Tests
+Test project using separate connection strings inside project 

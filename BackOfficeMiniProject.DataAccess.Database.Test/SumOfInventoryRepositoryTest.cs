@@ -18,7 +18,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
 
         protected DbContextOptions<BackOfficeDbContext> dbContextOptions { get; }
         protected BackOfficeDbContext context;
-        protected string connectionString = "Server=localhost;port=3306;Database=Test_SumOfInventory;User=root;Password=12345;";
+        protected string connectionString = "Server=localhost;port=3307;Database=Test_SumOfInventory;User=root;Password=12345;";
 
         public SumOfInventoryRepositoryTest()
         {
@@ -63,8 +63,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
                     .Sum();
 
                 SumOfInventory actualSumOfInventory = actualSumOfInventories
-                    .Where(i => i.BrandName.Equals(expectedBrand.Name))
-                    .FirstOrDefault();
+                    .FirstOrDefault(i => i.BrandName.Equals(expectedBrand.Name));
 
                 Assert.Equal(expectedBrand.Name, actualSumOfInventory.BrandName);
                 Assert.Equal(expectedSum, actualSumOfInventory.Quantity);

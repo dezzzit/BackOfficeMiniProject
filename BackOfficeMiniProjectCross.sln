@@ -10,9 +10,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOfficeMiniProject.DataAccess.Database", "BackOfficeMiniProject.DataAccess.Database\BackOfficeMiniProject.DataAccess.Database.csproj", "{BD887160-46DE-488D-A33D-6227D903579C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8FD6E840-D436-4F76-B850-337FBA5F0619}"
-	ProjectSection(SolutionItems) = preProject
-		Readme.md = Readme.md
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOfficeMiniProject.Cache", "BackOfficeMiniProject.Cache\BackOfficeMiniProject.Cache.csproj", "{F745F296-D7DC-4F6F-8DA2-73BA445A906C}"
 EndProject
@@ -20,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOfficeMiniProject.DataA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOfficeMiniProject.Reports", "BackOfficeMiniProject.Reports\BackOfficeMiniProject.Reports.csproj", "{36AAA828-15EE-496F-B302-402F267AAB7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOfficeMiniProject.DataAccess.Database.Test", "BackOfficeMiniProject.DataAccess.Database.Test\BackOfficeMiniProject.DataAccess.Database.Test.csproj", "{B2A6EDE7-507D-4C31-AE21-0B37D4F0E4FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOfficeMiniProject.DataAccess.Database.Test", "BackOfficeMiniProject.DataAccess.Database.Test\BackOfficeMiniProject.DataAccess.Database.Test.csproj", "{B2A6EDE7-507D-4C31-AE21-0B37D4F0E4FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

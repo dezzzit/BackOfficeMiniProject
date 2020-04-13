@@ -2,6 +2,7 @@ using BackOfficeMiniProject.Cache.AppSettings;
 using BackOfficeMiniProject.DataAccess.Database.Context;
 using BackOfficeMiniProject.DataAccess.Database.Repositories;
 using BackOfficeMiniProject.DataAccess.Repository;
+using BackOfficeMiniProjectCross.AppSettings;
 using BackOfficeMiniProjectCross.VueCoreConnection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,6 +17,7 @@ namespace BackOfficeMiniProjectCross
     public class Startup
     {
         private CacheSetting _cacheSetting;
+        private ConnectionString _connectionString;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -44,21 +46,24 @@ namespace BackOfficeMiniProjectCross
                 configuration.RootPath = "ClientApp";
             });
             
-            services.AddDbContextPool<BackOfficeDbContext>(options => options
-                // replace with your connection string
-                .UseMySql("Server=localhost;port=3307;Database=test9;User=root;Password=12345;", mySqlOptions => mySqlOptions
-                    // replace with your Server Version and Type
-                    .MigrationsAssembly("BackOfficeMiniProjectCross")
-                    
-                ));
 
+            _connectionString = Configuration.GetSection(nameof(ConnectionString))
+                .Get<ConnectionString>();
             _cacheSetting = Configuration.GetSection(nameof(CacheSetting))
                 .Get<CacheSetting>();
             services
                 .Configure<CacheSetting>(
-                    Configuration.GetSection(nameof(CacheSetting)));
+                    Configuration.GetSection(nameof(CacheSetting)))
+                .Configure<ConnectionString>(
+                    Configuration.GetSection(nameof(ConnectionString)));
 
+            services.AddDbContextPool<BackOfficeDbContext>(options => options
+                // replace with your connection string
+                .UseMySql(_connectionString.DefaultConnectionString, mySqlOptions => mySqlOptions
+                    // replace with your Server Version and Type
+                    .MigrationsAssembly("BackOfficeMiniProjectCross")
 
+                ));
 
             //Add memory caching
             services.AddMemoryCache();
