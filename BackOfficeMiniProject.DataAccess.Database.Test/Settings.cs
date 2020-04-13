@@ -5,8 +5,6 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
 {
     public class Settings
     {
-        private static readonly ConnectionString _connectionString;
-
         static Settings()
         {
             var builder = new ConfigurationBuilder();
@@ -14,10 +12,10 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
 
             IConfigurationRoot configuration = builder.Build();
 
-            _connectionString = configuration.GetSection(nameof(ConnectionString))
+            ConnectionString = configuration.GetSection(nameof(ConnectionString))
                 .Get<ConnectionString>();
         }
 
-        public static ConnectionString ConnectionString => _connectionString;
+        public static ConnectionString ConnectionString { get; }
     }
 }

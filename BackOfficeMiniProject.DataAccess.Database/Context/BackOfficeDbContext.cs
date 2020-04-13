@@ -8,6 +8,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
     /// </summary>
     public class BackOfficeDbContext : DbContext
     {
+        private static object _lc = new object();
         /// <summary>
         /// Provides brands returned from database
         /// </summary>
@@ -32,28 +33,31 @@ namespace BackOfficeMiniProject.DataAccess.Database.Context
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Brand>(entity =>
+            lock (_lc)
             {
-                entity.HasKey(e => e.Id)
-                    .HasAnnotation("MySQL:AutoIncrement", true);
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
+                base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Order>(entity =>
-            {
-                entity.HasKey(e => e.Id)
-                    .HasAnnotation("MySQL:AutoIncrement", true);
-                entity.Property(e => e.TimeReceived).IsRequired();
-                entity.Property(e => e.Quantity).IsRequired();
-                entity.HasOne(d => d.Brand)
-                    .WithMany(p => p.Orders);
-            });
+                modelBuilder.Entity<Brand>(entity =>
+                {
+                    entity.HasKey(e => e.Id)
+                        .HasAnnotation("MySQL:AutoIncrement", true);
+                    entity.Property(e => e.Name)
+                        .IsRequired()
+                        .HasMaxLength(50);
+                });
 
-            modelBuilder.Seed();
+                modelBuilder.Entity<Order>(entity =>
+                {
+                    entity.HasKey(e => e.Id)
+                        .HasAnnotation("MySQL:AutoIncrement", true);
+                    entity.Property(e => e.TimeReceived).IsRequired();
+                    entity.Property(e => e.Quantity).IsRequired();
+                    entity.HasOne(d => d.Brand)
+                        .WithMany(p => p.Orders);
+                });
+
+                modelBuilder.Seed();
+            }
         }
     }
 }

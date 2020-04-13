@@ -19,35 +19,35 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
         private readonly IBrandRepository _brandRepository;
         private readonly ISumOfInventoryRepository _sumOfInventoryRepository;
 
-        protected DbContextOptions<BackOfficeDbContext> dbContextOptions { get; }
-        protected BackOfficeDbContext context;
+        protected DbContextOptions<BackOfficeDbContext> DbContextOptions { get; }
+        protected BackOfficeDbContext Context;
 
         public SumOfInventoryRepositoryTest()
         {
-            dbContextOptions = new DbContextOptionsBuilder<BackOfficeDbContext>()
-                .UseMySql(Settings.ConnectionString.SumOfInventory)
+            DbContextOptions = new DbContextOptionsBuilder<BackOfficeDbContext>()
+                .UseMySql(Settings.ConnectionString.BrandRepository)
                 .Options;
 
-            context = new BackOfficeDbContext(dbContextOptions);
+            Context = new BackOfficeDbContext(DbContextOptions);
 
-            context.Database.EnsureCreated();
+            Context.Database.EnsureCreated();
 
-            _brandRepository = new BrandRepository(context);
-            _sumOfInventoryRepository = new SumOfInventoryRepository(context);
+            _brandRepository = new BrandRepository(Context);
+            _sumOfInventoryRepository = new SumOfInventoryRepository(Context);
         }
         
         public void Dispose()
         {
-            context.Database.EnsureDeleted();
+            Context.Database.EnsureDeleted();
         }
 
         [Fact]
         public void Test_SumOfInventory()
         {
-            int expectedBrandCount = context.Brands
+            int expectedBrandCount = Context.Brands
                 .Count();
 
-            int[] expectedBrandIds = context.Brands
+            int[] expectedBrandIds = Context.Brands
                 .Select(b => b.Id)
                 .ToArray();
 
@@ -59,7 +59,7 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
                 Brand expectedBrand = _brandRepository.Get(expectedBrandId);
                 Assert.NotNull(expectedBrand);
 
-                int expectedSum = context.Orders
+                int expectedSum = Context.Orders
                     .Where(o => o.BrandId == expectedBrand.Id)
                     .Select(s => s.Quantity)
                     .Sum();

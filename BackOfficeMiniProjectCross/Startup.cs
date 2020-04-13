@@ -104,10 +104,10 @@ namespace BackOfficeMiniProjectCross
                 endpoints.MapControllers();
             });
 
-            
+
 
             //use middleware and launch server for Vue
-
+            //exclude spa invocation for run Swagger  
             app.UseSpaStaticFiles();
             app.UseSpa(spa =>
             {

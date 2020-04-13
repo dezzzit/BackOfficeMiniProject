@@ -15,25 +15,25 @@ namespace BackOfficeMiniProject.DataAccess.Database.Test
     {
         private readonly IBrandRepository _brandRepository;
 
-        protected DbContextOptions<BackOfficeDbContext> dbContextOptions { get; }
-        protected BackOfficeDbContext context;
+        protected DbContextOptions<BackOfficeDbContext> DbContextOptions { get; }
+        protected BackOfficeDbContext Context;
 
         public BrandRepositoryTests()
         {
-            dbContextOptions = new DbContextOptionsBuilder<BackOfficeDbContext>()
+            DbContextOptions = new DbContextOptionsBuilder<BackOfficeDbContext>()
                 .UseMySql(Settings.ConnectionString.BrandRepository)
                 .Options;
 
-            context = new BackOfficeDbContext(dbContextOptions);
+            Context = new BackOfficeDbContext(DbContextOptions);
 
-            context.Database.EnsureCreated();
+            Context.Database.EnsureCreated();
 
-            _brandRepository = new BrandRepository(context);
+            _brandRepository = new BrandRepository(Context);
         }
 
         public void Dispose()
         {
-            context.Database.EnsureDeleted();
+            Context.Database.EnsureDeleted();
         }
 
         [Fact]
